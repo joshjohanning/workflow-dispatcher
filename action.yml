@@ -41,6 +41,7 @@ runs:
   steps:
     - id: permission
       run: git update-index --chmod=+x ${{ github.action_path }}/dispatcher.sh
+      shell: bash
     - id: dispatch
       run: |
         ${{ github.action_path }}/dispatcher.sh
