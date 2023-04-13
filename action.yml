@@ -39,6 +39,8 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - id: permission
+      run: git update-index --chmod=+x ${{ github.action_path }}/dispatcher.sh
     - id: dispatch
       run: |
         ${{ github.action_path }}/dispatcher.sh
